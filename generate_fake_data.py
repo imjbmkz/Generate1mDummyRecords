@@ -16,7 +16,8 @@ if __name__=="__main__":
     if len(argv)>=2:
         records = int(argv[1])
     else:
-        records = 500_000
+        # Oh no! 'Di ba masisira PC ko?
+        records = 1_000_000
 
     # Delete existing folder with dummy files
     folder = Path("files")
@@ -28,7 +29,7 @@ if __name__=="__main__":
 
     # Initialize Faker class and set seed for reproducibility
     fake = Faker()
-    fake.seed(20240901)
+    fake.seed(20240901) 
 
     # Generate 500k fake records
     for i in tqdm(range(1,records + 1)):
@@ -38,8 +39,9 @@ if __name__=="__main__":
             # Identity
             "id": i,
             "full_name": fake.name(),
-            "ssn": fake.ssn(),
+            "is_male": fake.boolean(chance_of_getting_true=55),
             "dob": fake.date_of_birth().strftime("%Y-%m-%d"),
+            "ssn": fake.ssn(),
             
             # Contact details
             "email": fake.email(),
