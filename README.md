@@ -1,7 +1,3 @@
-Absolutely! Here's an updated README with additional details about the data being generated:
-
----
-
 # Fake Data Generator
 
 This script generates a specified number of fake records and saves each record as a JSON file in a designated folder. It uses the `Faker` library to create realistic-looking data and `tqdm` to display a progress bar.
@@ -90,7 +86,3 @@ The script performs the following steps:
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-Feel free to customize this README further to suit your needs!
