@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from sys import argv
 from pathlib import Path
 from shutil import rmtree
@@ -6,6 +7,10 @@ from faker import Faker
 from tqdm import tqdm
 
 if __name__=="__main__":
+
+    # Some logs
+    start_time = datetime.now()
+    print(f"{start_time}: App has started")
 
     # Control the number of records
     if len(argv)>=2:
@@ -48,3 +53,8 @@ if __name__=="__main__":
 
         with open(folder / f"{i}.json", "w") as fp:
             json.dump(fake_data, fp)
+
+    # Some logs
+    end_time = datetime.now()
+    duration = end_time - start_time
+    print(f"{end_time}: App has ended. Runtime: {duration}")
