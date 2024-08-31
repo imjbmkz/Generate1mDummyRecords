@@ -29,7 +29,7 @@ if __name__=="__main__":
 
     # Initialize Faker class and set seed for reproducibility
     fake = Faker()
-    fake.seed(20240901) 
+    Faker.seed(20240901) 
 
     # Generate 500k fake records
     for i in tqdm(range(1,records + 1)):
