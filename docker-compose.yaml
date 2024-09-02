@@ -1,0 +1,36 @@
+services:
+
+  # PostgreSQL database
+  pgdatabase:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=fakedb
+    volumes:
+      - ./fakedb:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+  
+  # pgadmin: GUI for PostgreSQL database
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8080:80"
+
+  # # Dockerize the Python app
+  # pythonapp:
+  #   image: python:3.11
+  #   working_dir: /app
+  #   volumes:
+  #     - .:/app
+  #   command: python app.py
+  #   depends_on:
+  #     - app
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+
