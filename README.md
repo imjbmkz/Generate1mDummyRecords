@@ -1,6 +1,6 @@
 # Fake Data Generator
 
-This script generates a specified number of fake records and saves each record as a JSON file in a designated folder. It uses the `Faker` library to create realistic-looking data and `tqdm` to display a progress bar.
+This script generates a specified number of fake records and saves each record as a JSON file in a designated folder. It uses the `Faker` library to create realistic-looking data.
 
 ## Features
 
@@ -13,15 +13,19 @@ This script generates a specified number of fake records and saves each record a
 
 - Python 3.x
 - `Faker` library
-- `tqdm` library
 
 ## Installation
 
 1. Install Python 3.x from [python.org](https://www.python.org/).
-2. Install the required libraries using pip:
+2. Create and activate virtual environment.
+  ```sh
+  python -m venv env
+  source env/Scripts/activate
+  ```
+3. Install the required packages from file:
 
     ```sh
-    pip install faker tqdm
+    pip install -r requirements.txt
     ```
 
 ## Usage
@@ -34,6 +38,11 @@ This script generates a specified number of fake records and saves each record a
     ```
 
     - `number_of_records` (optional): The number of fake records to generate. Defaults to 1,000,000 if not specified.
+3. Run using Docker.
+  ```sh
+  docker build -t pydatagen .
+  docker run pydatagen
+  ```
 
 ## Example
 

@@ -2,4 +2,5 @@ faker==28.1.0
 sqlalchemy==2.0.32
 psycopg2==2.9.9
 ipykernel==6.29.5 # for testing scipts using Jupyter Notebooks
-pyspark==3.5.2 # for preprocessing large JSON files
+# tqdm==4.66.5 # for some reason, not printing on unix terminal
+# pyspark==3.5.2 # for preprocessing large JSON files
